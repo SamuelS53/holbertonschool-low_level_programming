@@ -1,21 +1,25 @@
 #include <stdio.h>
 
 /**
-  * main - Prints a serie of numbers with commas
-  *
-  * Return: Always (Success);
-  */
+ * main - Entry point
+ *
+ * Return: Always 0 (Succes)
+ */
+
 int main(void)
 {
-	int c;
+	int n;
 
-	for (c = '0'; c <= '9'; c++)
+	for (n = 0 ; n < 10 ; n++)
 	{
-		putchar(c);
-
-		if (c != '9')
+		putchar(n + '0');
+		if (n < 9)
 		{
 			putchar(',');
-			putchar(' ');
+			putchar(32);
 		}
 	}
+	putchar('\n');
+	return (0);
+}
+
