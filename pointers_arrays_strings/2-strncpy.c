@@ -1,22 +1,18 @@
 #include "main.h"
-
 /**
- * _strchr - Locates a character in a string.
- * @s: The string to be searched.
- * @c: The character to be located.
- *
- * Return: If c is found - a pointer to the first occurence.
- *         If c is not found - NULL.
+ * _strncpy - concatenate strings, defining the size of second string.
+ * @dest: string with concatenation
+ * @src: string to be concatenated
+ * @n: size of second string
+ * Return: Always 0.
  */
-char *_strchr(char *s, char c)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int index;
+	int i;
 
-	for (index = 0; s[index] >= '\0'; index++)
-	{
-		if (s[index] == c)
-			return (s + index);
-	}
-
-	return ('\0');
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		*(dest + i) = *(src + i);
+	for ( ; i < n; i++)
+		*(dest + i) = '\0';
+	return (dest);
 }
